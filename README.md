@@ -4,6 +4,31 @@ Docker
 - Não faz sentido ter um container isolado. Ele precisa ter um isolamento controlado
 - Comunicação entre multiplos containers
 
+## Diferença entre image e container
+- A imagem é quivalente a classe e o container seria um objeto. Com a classe (imagem) é possível instanciar vários containers
+- Uma imagem é um modelo de sistema de arquivos somente leitura formado em camadas.
+- O Container é um processo segredo e isolado, a partir deste processo pode ser criado muitos sub processos e este tem acesso a um sistema de arquivos criado a partir da imagem.
+- O conatiner é o processo e a imagem é o modelo de sistema arquivos para a criação de containers
+
+## Image
+- Possuí um identificador único, que é um SHA 256. Mas não é comum utilizado, é melhor ter identificador e tags para acessa-lás
+- São organizadas em registrys (repositórios) como o Docker Hub
+- No docker hub só tem imagens, que são utilizadas para inicar os containers
+- Para utilizar uma imagem com a tag latest, é preciso utilziar o comando: docker image pull redis:latest (APENAS DOWNLOAD)
+- Para inspencionar uma imagem docker é preciso utilizar o comando:  docker image inspect redis:latest
+- Para inserir tags nas imagens é preciso utilizar o comando: docker image tag redis:latest cod3r-redis e depois docker image ls para ver o resultado
+- Para remover uma imagem é preciso executar o comand: docker image rm redis:latest cod3r-redis e depois docker image ls para ver o resultado
+- As hashs representar as versões das imagens, é possível ter várias tags apontando para uma mesma imagem
+- Não é bom utilizar as ultímas versões das imagens, pode quebrar os projetos
+
+### comandos para Image
+- docker image ls <- listar as imagens
+- docker image pull <- responsável por baixar as imagens do docker hub (as vezes acontece de forma implicita, como por exemplo, quando é utilizando do comando docker run)
+- docker image rm <- remover as imagens, aceita o hash ou o nome da imagem
+- docker image inspect <- utilizar para inspencionar uma imagem
+- docker image tag <- o 1º parametro é a imagem fonte que recebera a tag e depois a tag
+- docker image build <- constroi uma imagem atraves de um arquivo
+
 # Iniciando - Hello World
 docker container run hello-world
 
