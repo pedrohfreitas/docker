@@ -28,6 +28,8 @@ Docker
 - docker image inspect <- utilizar para inspencionar uma imagem
 - docker image tag <- o 1º parametro é a imagem fonte que recebera a tag e depois a tag
 - docker image build <- constroi uma imagem atraves de um arquivo
+ 
+
 
 # Iniciando - Hello World
 docker container run hello-world
