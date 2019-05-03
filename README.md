@@ -29,7 +29,9 @@ Docker
 - docker image tag <- o 1º parametro é a imagem fonte que recebera a tag e depois a tag
 - docker image build <- constroi uma imagem atraves de um arquivo
  
-
+### imagem build command
+- docker image build -t ex-simple-build C:\dev\docker\primeiro-build <- o ponto no final é a pasta atual aonde está o arquivo Dockerfile
+- docker container run -p 80:80 ex-simple-build
 
 # Iniciando - Hello World
 docker container run hello-world
