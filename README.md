@@ -139,3 +139,8 @@ Inicia o Bash: <br />
 Abre a conexão com o Banco de Dados: <br />
 `/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<YourNewStrong!Passw0rd>'` 
 
+### Conectando de fora de um container
+
+Com o ip da maquina e sqlcmd instalado, executar o comando abaixo
+`sqlcmd -S <ip_address>,1433 -U SA -P '789@QaZ'`
+
