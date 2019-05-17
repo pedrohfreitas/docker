@@ -122,20 +122,20 @@ docker container inspect ex-daemon-basic
 
 ## Utilizando SQL SERVER
 
-Comando para realizar o download da Imagem do SQL SERVER 2017:
+Comando para realizar o download da Imagem do SQL SERVER 2017: <br />
 `docker pull mcr.microsoft.com/mssql/server:2017-latest` 
 
-Inicio o Banco de Dados:
+Inicio o Banco de Dados: <br />
 `docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=789@QaZ' -p 1433:1433 --name sql1 -d mcr.microsoft.com/mssql/server:2017-latest` 
 
-Alterar a Senha do Banco de Dados:
+Alterar a Senha do Banco de Dados: <br />
 `docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<YourStrong!Passw0rd>' -Q 'ALTER LOGIN SA WITH PASSWORD="<YourNewStrong!Passw0rd>"'` 
 
 ### Conectando ao SQL SERVER
 
-Inicia o Bash:
+Inicia o Bash: <br />
 `docker exec -it sql1 "bash"` 
 
-Abre a conexão com o Banco de Dados:
+Abre a conexão com o Banco de Dados: <br />
 `/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<YourNewStrong!Passw0rd>'` 
 
