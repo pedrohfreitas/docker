@@ -126,7 +126,7 @@ Comando para realizar o download da Imagem do SQL SERVER 2017: <br />
 `docker pull mcr.microsoft.com/mssql/server:2017-latest` 
 
 Inicio o Banco de Dados: <br />
-`docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=789@QaZ' -p 1433:1433 --name sql1 -d mcr.microsoft.com/mssql/server:2017-latest` 
+`docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=!789@QAz' -p 1433:1433 --name sql1 -d mcr.microsoft.com/mssql/server:2017-latest` 
 
 Alterar a Senha do Banco de Dados: <br />
 `docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<YourStrong!Passw0rd>' -Q 'ALTER LOGIN SA WITH PASSWORD="<YourNewStrong!Passw0rd>"'` 
@@ -142,5 +142,5 @@ Abre a conexão com o Banco de Dados: <br />
 ### Conectando de fora de um container
 
 Com o ip da maquina e sqlcmd instalado, executar o comando abaixo
-`sqlcmd -S 192.168.0.104,1433 -U SA -P '789@QaZ'`
+`sqlcmd -S 10.0.75.1,1433 -U SA -P '!789@QAz'`
 
