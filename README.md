@@ -142,5 +142,5 @@ Abre a conexão com o Banco de Dados: <br />
 ### Conectando de fora de um container
 
 Com o ip da maquina e sqlcmd instalado, executar o comando abaixo
-`sqlcmd -S <ip_address>,1433 -U SA -P '789@QaZ'`
+`sqlcmd -S 192.168.0.104,1433 -U SA -P '789@QaZ'`
 
